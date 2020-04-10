@@ -13,7 +13,7 @@ O Template prevê:
 
 * Uso de GPIO (*General Purpose Input Output*) para interfaceamento Humano-Micro e acionamento autônomo
 
-* Fácil Integração de módulos Bluetooth e Acelerômetros do Laboratório (**Pós Curso**)
+* Fácil Integração de módulos Bluetooth e Acelerômetros 
 
 ![imagem](https://os.mbed.com/media/uploads/wsr06596/frdm_k64f_reve4_header_pinout.jpg)
 
