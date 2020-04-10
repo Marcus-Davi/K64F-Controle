@@ -15,6 +15,7 @@ O Template prevê:
 
 * Fácil Integração de módulos Bluetooth e Acelerômetros do Laboratório (**Pós Curso**)
 
+![imagem](https://github.com/Marcus-Davi/K64F-Controle/edit/master/k64f.jpeg)
 
 ***TAREFAS***
 
