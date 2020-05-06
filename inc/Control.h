@@ -31,7 +31,7 @@ typedef void (*FunPt)();
 class Control {
 public:
 
-	class ADC; //Flata Implementar
+	class ADC; // Flata Implementar
 	class DAC; // Falta Implementar
 	class PWM; // Falta Implementar
 
@@ -44,8 +44,8 @@ public:
 	static bool getControlStatus();
 	static void setControlLawHandle(FunPt callback);
 
-	//Blocking!
-	static void delay(uint32_t usec);
+	// Wait time 'msec' milliseconds
+	static void delay(uint32_t msec);
 
 
 

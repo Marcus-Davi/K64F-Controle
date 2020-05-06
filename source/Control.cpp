@@ -7,6 +7,7 @@
 
 #include "Control.h"
 
+extern uint32_t g_sys;
 
 void Control::setSamplingFrequency(float Hz){
 	uint32_t usec = 1000000.0/Hz;
@@ -42,13 +43,18 @@ void Control::runControl(){
 	ControlHandle();
 }
 
-//Tempo para esperar em usec
-void Control::delay(uint32_t usec){
-	PIT_SetTimerPeriod(PIT,kPIT_Chnl_1 , USEC_TO_COUNT(usec,CLOCK_GetBusClkFreq()));
-	PIT_StartTimer(PIT, kPIT_Chnl_1);
-	while(PIT_GetStatusFlags(PIT, kPIT_Chnl_1) != kPIT_TimerFlag);
-	PIT_StopTimer(PIT, kPIT_Chnl_1);
-	PIT_ClearStatusFlags(PIT, kPIT_Chnl_1 , kPIT_TimerFlag);
+//Now using SYSTICK so that one more timer chanell is usable
+
+// Wait time 'msec' milliseconds
+void Control::delay(uint32_t msec){
+	g_sys = msec;
+	while(g_sys != 0);
+
+//	PIT_SetTimerPeriod(PIT,kPIT_Chnl_1 , USEC_TO_COUNT(usec,CLOCK_GetBusClkFreq()));
+//	PIT_StartTimer(PIT, kPIT_Chnl_1);
+//	while(PIT_GetStatusFlags(PIT, kPIT_Chnl_1) != kPIT_TimerFlag);
+//	PIT_StopTimer(PIT, kPIT_Chnl_1);
+//	PIT_ClearStatusFlags(PIT, kPIT_Chnl_1 , kPIT_TimerFlag);
 }
 
 

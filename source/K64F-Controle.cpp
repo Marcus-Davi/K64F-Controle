@@ -56,6 +56,7 @@ int main(void) {
     BOARD_InitBootPins();
     BOARD_InitBootClocks();
     BOARD_InitBootPeripherals();
+    SysTick_Config(CLOCK_GetCoreSysClkFreq() / 1000u); //SysTick interrupts.
   	/* Init FSL debug console. */
     BOARD_InitDebugConsole();
 
@@ -84,7 +85,8 @@ int main(void) {
 
     //Lei 1
     while(1) {
-
+    	LED_RED_TOGGLE();
+    	Control::delay(100);
     }
 
 
